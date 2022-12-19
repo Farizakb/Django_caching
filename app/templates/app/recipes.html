@@ -1,3 +1,5 @@
+{% load cache %}
+
 <html>
 <head>
   <title>Recipes</title>
@@ -8,6 +10,10 @@
   </style>
 </head>
 <body>
+
+{% comment %} {% cache 500 recipe %} {% endcomment %}
+
+
 {% for recipe in recipes %}
   <h1>{{ recipe.name }}</h1>
   {% autoescape off %}
@@ -19,7 +25,8 @@
     <li>{{ ingredient.description }}</li>
     {% endfor %}
   </ul>
-  
+
 {% endfor %}
+{% comment %} {% endcache %} {% endcomment %}
 </body>
 </html>
