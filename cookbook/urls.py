@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('recipe', recipes_view),
     path('__debug__/', include(debug_toolbar.urls)),
+    
 ]

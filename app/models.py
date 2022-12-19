@@ -34,6 +34,7 @@ class Meal(models.Model):
         return self.name
 
 
+
 class Ingredient(models.Model):
     """A meal that is used in a recipe."""
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
